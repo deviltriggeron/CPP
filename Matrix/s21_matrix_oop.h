@@ -6,12 +6,6 @@
 #include <cmath>
 
 class Matrix {
-    private:
-        int rows_, cols_;         // Rows and columns
-        double **matrix_;         // Pointer to the memory where the matrix is allocated
-        const double EPS = 1e-7;   // EPS
-        Matrix determinant_m(const int minor_row, const int minor_col) const;
-
     public:
         Matrix();              // Default constructor
         Matrix(int rows, int cols);
@@ -52,6 +46,11 @@ class Matrix {
         Matrix CalcComplements();
         double Determinant();
         Matrix InverseMatrix();
+private:
+        int rows_, cols_;         // Rows and columns
+        double **matrix_;         // Pointer to the memory where the matrix is allocated
+        const double EPS = 1e-7;   // EPS
+        Matrix determinant_m(const int minor_row, const int minor_col) const;
 };
 
 #endif
